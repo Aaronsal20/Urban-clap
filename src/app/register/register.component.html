@@ -1,0 +1,51 @@
+<div class="register-box">
+  <div class="register">
+    <mat-card>
+      <h2>Register</h2>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <form (submit)="createUser(loginForm)"  #loginForm="ngForm">
+<mat-form-field>
+  <mat-label>Select Category</mat-label>
+  <mat-select>
+    <mat-option (onchange)="selectType(type.value)" *ngFor="let type of type" [value]="type.value">
+      {{type.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Select Category</mat-label>
+  <mat-select>
+    <mat-option onchange="" *ngFor="let type of type" [value]="type.value">
+      {{type.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+        <mat-form-field>
+          <input matInput name="name" ngModel placeholder="Name" #emailInput="ngModel" ><br>
+
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" name="number" ngModel placeholder="Mobile Number" #emailInput="ngModel" ><br>
+
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email><br>
+          <mat-error *ngIf="emailInput.invalid">Please enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+         <input ngModel type="password" name="password" matInput placeholder="Password" #password="ngModel" required>
+          <mat-error *ngIf="password.invalid">Please enter a Post content</mat-error>
+        </mat-form-field>
+        <button mat-raised-button
+
+           color="accent"
+          type="submit">Register</button>
+      </form>
+
+    </mat-card>
+  </div>
+
+</div>
+
+
+

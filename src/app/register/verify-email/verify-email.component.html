@@ -1,0 +1,30 @@
+<div class="register-box">
+  <div class="register">
+    <mat-card>
+      <h2>Verify E-mail</h2>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <form (submit)="verifyUser(emailForm)"  #emailForm="ngForm">
+        <mat-form-field>
+          <input matInput name="token" type="text" ngModel placeholder="Token" #emailInput="ngModel" ><br>
+
+        </mat-form-field>
+
+        <button mat-raised-button
+
+           color="accent"
+          type="submit">Confirm</button>
+      </form>
+      <mat-divider></mat-divider>
+      <div *ngIf="verify">
+        <h4>You have verified your email click <a routerLink="/login">here</a> to log in</h4>
+      </div>
+
+
+
+    </mat-card>
+  </div>
+
+</div>
+
+
+
